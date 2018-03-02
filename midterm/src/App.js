@@ -7,26 +7,50 @@ import {
   Switch,
   Redirect
 } from 'react-router-dom';
-
 import {
     BrowserRouter as Router,
     Route,
 } from 'react-router-dom'
-
+import {
+    Button,
+    Container,
+    Segment,
+    Visibility
+} from 'semantic-ui-react'
+import Menu from './Menu'
 class App extends Component {
+ 
+ constructor(props) {
+        super(props);
+        this.state = {
+          items: [
+            {
+              home: 'home',
+              about: 'about',
+              contact: 'contact'
+            }
+          ]
+        };
+  }
+
+
   render() {
+    const items = this.state.items.map((item) => (
+      <Menu
+        key={item.id}
+        home={item.home}
+        about={item.about}
+        contact={item.contact}
+      />
+    ));//a
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div id='items'>
+        {items}
       </div>
     );
   }
 }
 
 export default App;
+
+
