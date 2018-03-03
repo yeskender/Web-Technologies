@@ -1,18 +1,52 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
-
+import {
+    Button,
+    Menu,
+    Container,
+    Segment,
+    Visibility
+} from 'semantic-ui-react'
 class App extends Component {
+
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div className="ui centered card">
+          <div className="content">
+            <div className="header">Calculator</div>
+            <form className="ui form">
+              <div className="field">
+                <input type="number" name="calc" placeholder="0" disabled></input>
+              </div>
+            </form>
+          </div>
+          <div className="content">
+          <div className="row">
+            <button className="large ui inverted blue button">=</button>
+            <button className="large ui inverted blue button">?</button>
+            <button className="large ui inverted blue button">%</button>
+            <button className="large ui inverted orange button">/</button>
+          </div>
+          <div className="row">
+            <button className="large ui inverted blue button">7</button>
+            <button className="large ui inverted blue button">8</button>
+            <button className="large ui inverted blue button">9</button>
+            <button className="large ui inverted orange button">*</button>
+          </div>
+          <div className="row">
+            <button className="large ui inverted blue button">4</button>
+            <button className="large ui inverted blue button">5</button>
+            <button className="large ui inverted blue button">6</button>
+            <button className="large ui inverted orange button">-</button>
+          </div>
+          <div className="row">
+            <button className="large ui inverted blue button">1</button>
+            <button className="large ui inverted blue button">2</button>
+            <button className="large ui inverted blue button">3</button>
+            <button className="large ui inverted orange button">+</button>
+          </div>
+          </div>
       </div>
     );
   }
