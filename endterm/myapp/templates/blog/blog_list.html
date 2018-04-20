@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+      
+      <div class="well">
+        <h1>
+          {% if blog_list|length > 1 %}
+            {{blog_list|length}} blogs
+          {% elif blog_list|length == 1 %}
+            {{blog_list|length}} blog
+          {% else %}
+            blogs list empty
+          {% endif %}
+        </h1>
+        {% for blog in blog_list %}
+          <div class="panel panel-default">
+            <div class="panel-body">
+              <h2><a href="{% url 'blog_details' blog_id=blog.id %}">{{blog}}</a></h2>
+              <p class="pull-right">{{blog.created_at}}</p>
+              <p class="pull-left">{{blog.updated_at}}</p>
+            </div>
+          </div>
+      {% endfor %}
+      </div>
+
+{% endblock content %}
